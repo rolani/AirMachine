@@ -15,17 +15,17 @@ public class Device implements Runnable {
 	public void run() {
 
 	}
-
-	public void joinAM(Controller ctrl) {
+	public void joinGrid(GridController ctrl) {
 		ctrl.addDevice(this);
 	}
-
-	public void leaveAM(Controller ctrl) {
+	public void leaveGrid(GridController ctrl) {
 		ctrl.removeDevice(this);
 	}
-
-	public boolean isConnected(Controller ctrl) {
+	public boolean isConnected(GridController ctrl) {
 		return ctrl.findDevice(this);
+	}
+	public void uploadData() {
+		
 	}
 
 }
