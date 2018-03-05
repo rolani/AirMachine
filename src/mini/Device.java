@@ -24,8 +24,5 @@ public class Device implements Runnable {
 	public boolean isConnected(GridController ctrl) {
 		return ctrl.findDevice(this);
 	}
-	public void uploadData() {
-		
-	}
 
 }
