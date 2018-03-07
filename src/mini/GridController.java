@@ -56,6 +56,19 @@ public class GridController implements Runnable {
 	public int numOfDevices() {
 		return deviceList.size();
 	}
+	
+	public List<Device> getOneDevice() {
+		selectedDeviceList.clear();
+		if (numOfDevices() == 1) {
+			selectedDeviceList.add(deviceList.get(0));		
+		}else if(numOfDevices() > 1) {
+			selectedDeviceList.add(deviceList.get(getRandomNumberInRange(0, numOfDevices()-1)));
+		}else {
+			System.out.println("No device in grid");
+		}
+		return selectedDeviceList;
+	}
+	
 	//select 2 devices from the list of devices to capture video
 	public List<Device> getSelectedDevices() {
 		selectedDeviceList.clear();
@@ -81,7 +94,7 @@ public class GridController implements Runnable {
 	}
 	
 
-	
+	//returns a random number between min and max
 	public static int getRandomNumberInRange(int min, int max) {
 		if (min >= max) {
 			throw new IllegalArgumentException("max must be greater than min");
