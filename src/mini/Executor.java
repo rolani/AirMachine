@@ -14,6 +14,13 @@ public class Executor extends Params {
 
 	private static FileWriter fileWriter1, fileWriter2, fileWriter3, fileWriter4, fileWriter5, fileWriter6;
 
+	
+	// specify number of time points to go through
+	public static void runAnalyze() throws FileNotFoundException, IOException {
+		analyzePoints(48);
+	}
+	
+	
 	// looping through each time point from 1 to 48 (0 to 47)
 	public static void analyzePoints(int num) throws FileNotFoundException, IOException {
 		for (int j = 0; j < num; j++) {
@@ -51,10 +58,6 @@ public class Executor extends Params {
 
 	}
 
-	// specify number of time points to go through
-	public static void runAnalyze() throws FileNotFoundException, IOException {
-		analyzePoints(48);
-	}
 
 	// processing grids and device joining
 	public static void preProcess(int[][] grid, int num, int status) throws IOException {
@@ -287,8 +290,7 @@ public class Executor extends Params {
 			FAILURE_RATE = Double.parseDouble(args[0]);
 
 		} catch (Exception e) {
-			System.out.println("Seven arguments needed -- input file, output file, no of machines, "
-					+ "over/under shoot, sync degree, no of continuous runs and dynamic output file");
+			System.out.println("One argument needed: device failure rate");
 		}
 		df = new DecimalFormat("#.00");
 		// bandwidthUsage = new ArrayList<Double>();
