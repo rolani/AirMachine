@@ -30,7 +30,8 @@ In the AM setup, the fog in a grid is responsible for coordinating the devices w
 The fog coordinates the video capture by selecting a subset of devices. Whereas, in a random setup devices keep capturing videos and uploading them  to the fog which they are connected to with no coordination.
 
 #### Parameters
-The simulation parameters are as follow. 
+The simulation parameters are as follows:
+
 (i) Time slot: amount of time elapsed before checking for a topology change. 
 
 (ii) Failure rate: probability that a device will fail to upload captured data at a given time slot. 
